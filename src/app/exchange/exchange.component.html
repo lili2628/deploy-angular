@@ -1,0 +1,43 @@
+<section class="content" role="main">
+
+  <div class="input-group">
+    <div class="input-group__input-label">
+      <label for="amountFrom">Amount</label>
+      <input name="from" type="number"  min="1" class="input-group__input" id="amountFrom" (change)="onKeyFrom($event)" [value]="displayExchangeFrom">
+    </div>
+
+      <select
+        class="input-group__select"
+        aria-label="Currency"
+        name="from"
+        id="from"
+        required
+        (change)="selectCurrencyFrom($event)">
+        <option></option>
+        <option *ngFor="let type of selectTypes" [value]="type.value"> {{type.display}} </option>
+      </select>
+  </div>
+
+  <div class="arrow-box">
+    <img src='../../assets/arrow.png' alt='arrow' class="arrow" />
+  </div>
+
+  <div class="input-group">
+    <div class="input-group__input-label">
+      <label for="amountTo">Amount</label>
+      <input name="to" type="number" min="1" class="input-group__input" id="amountTo" (change)="onKeyTo($event)" [value]="displayExchangeTo">
+    </div>
+
+    <select
+    class="input-group__select"
+      aria-label="Currency"
+      name="to"
+      id="to"
+      required
+      (change)="selectCurrencyTo($event)">
+      <option></option>
+      <option *ngFor="let type of selectTypes" [value]="type.value"> {{type.display}} </option>
+    </select>
+  </div>
+
+  </section>
